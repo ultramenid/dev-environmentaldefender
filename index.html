@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Environmental defender</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body>
+<header class="bg-ed sticky top-0 z-50">
+    <div x-data="{ open: false }" class="px-6 py-4 bg-ed z-10 sm:hidden block">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white " viewBox="0 0 20 20" fill="currentColor" @click="open = true">
+            <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+          </svg>
+
+        <div class="fixed w-3/4 h-screen z-50 bg-ed inset-0 overflow-y-auto " x-show="open"
+        x-transition:enter="transition-all transform ease-out"
+        x-transition:enter-start="-translate-x-1/2 opacity-0"
+        x-transition:enter-end="translate-x-0 opacity-100"
+        x-transition:leave="transition-all transform ease-in"
+        x-transition:leave-start="translate-x-0 opacity-100"
+        x-transition:leave-end="-translate-x-1/2 opacity-0"
+        @click.outside="open = false"
+        x-cloak style="display: none !important">
+            <button class="absolute px-6 py-4 focus:outline-none text-white" @click="open = false">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 " fill="white" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </button>
+
+            <div class="mt-16 space-y-3">
+                <div class=" px-6" x-data="{open1: false}">
+                    <div class="flex items-center py-1   px-4 mb-2" @click=" open1 =! open1">
+                        <a class=" leading-5 text-white text-xl font-semibold ">about </a>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
+                            <a href="#" class=" mr-6 text-ed">environmental defender</a>
+                            <hr>
+                            <a href="#" class=" mr-6 text-ed">situs ini</a>
+                    </div>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6" x-data="{open1: false}">
+                    <div class="flex items-center py-1   px-4 mb-2" @click=" open1 =! open1">
+                        <a class=" leading-5 text-white text-xl font-semibold ">resources </a>
+                        <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open1, 'rotate-0': !open1}" class="inline w-6 h-6 text-white items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                    </div>
+                    <div class="bg-white px-4 py-3 mb-4 flex flex-col space-y-2 rounded" x-show="open1" style="display: none !important;">
+                            <a href="#" class=" mr-6 text-ed">report</a>
+                            <hr>
+                            <a href="#" class=" mr-6 text-ed">regulasi</a>
+                            <hr>
+                            <a href="#" class=" mr-6 text-ed">database</a>
+
+                    </div>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a href="#"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">cases<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a href="#"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">action<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class=" px-6">
+                    <a href="#"  class="mb-4 px-4 inline-block  leading-5 text-white text-xl font-semibold ">alerta<a>
+                    <p class="border-b border-gray-300"></p>
+                </div>
+                <div class="px-6">
+                    <input type="text" class="w-full px-6 border-ed py-2 text-ed text-sm focus:outline-none" placeholder="search ed">
+                    <p class="border-b border-gray-300"></p>
+                </div>
+
+
+                <div class="px-6 flex space-x-2 text-white  text-sm  bottom-10 fixed z-30">
+                    <a href="#"  class="cursor-pointer  text-white font-bold ">english</a>
+                    <div class="border-l border-gray-300"></div>
+                    <a href="#"  class="cursor-pointer  text-white font-bold  ">indonesia</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-6 -py-2 sm:block hidden">
+        <div class="flex justify-between px-3">
+            <a></a>
+        </div>
+    </div>
+</header>
+<section class="bg-white py-4 px-4 lg:block hidden  z-50">
+    <div class="max-w-7xl mx-auto flex justify-end">
+        <div class="bg-auriga-biru sm:block hidden -mt-3">
+            <div class="flex space-x-2 text-gray-300 text-sm">
+                <a href="#"  class="cursor-pointer  text-ed font-bold ">EN</a>
+                <div class="border-l border-gray-300"></div>
+                <a href="#"  class="cursor-pointer  text-ed font-bold  ">ID</a>
+            </div>
+        </div>
+    </div>
+    <div class=" max-w-7xl  mx-auto flex w-full justify-between mt-3">
+        <div class="text-ed border-ed py-4">
+            <img src="assets/logo.png" alt="">
+        </div>
+        <div class="space-x-6 flex justify-end items-center text-ed">
+            <div @click.away="open = false" class="relative py-2" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full ">
+                    <a  class="font-semibold text-xl">about</a>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" style="display: none !important;" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-right  shadow-lg md:w-52 z-20">
+                  <div class=" bg-white shadow dark-mode:bg-gray-800">
+                    <a class="text-ed block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-ed dark-mode:hover:text-ed dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">environmental defender</a>
+                  </div>
+                  <div class="  bg-white shadow dark-mode:bg-gray-800">
+                    <a class="text-ed block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-ed dark-mode:hover:text-ed dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">situs ini</a>
+                  </div>
+                </div>
+
+            </div>
+
+            <div @click.away="open = false" class="relative py-2" x-data="{ open: false }">
+                <button @click="open = !open" class="flex flex-row items-center w-full ">
+                    <a  class="font-semibold text-xl">resources</a>
+                  <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}" class="inline w-4 h-4 items-center mt-1 ml-1 transition-transform duration-200 transform "><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </button>
+                <div x-show="open" style="display: none !important;" x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute left-0 w-full mt-2 origin-top-right  shadow-lg md:w-52 z-20">
+                  <div class=" bg-white shadow dark-mode:bg-gray-800">
+                    <a class="text-ed block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-ed dark-mode:hover:text-ed dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">report</a>
+                  </div>
+                  <div class="  bg-white shadow dark-mode:bg-gray-800">
+                    <a class="text-ed block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-ed dark-mode:hover:text-ed dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">regulasi</a>
+                  </div>
+                  <div class="  bg-white shadow dark-mode:bg-gray-800">
+                    <a class="text-ed block px-4 py-2  text-sm font-semibold bg-transparent  dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-ed dark-mode:hover:text-ed dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline" href="#">database</a>
+                  </div>
+                </div>
+
+            </div>
+
+            <div class="py-2 hover:border-b hover:border-ed">
+                <a href="#" class="font-semibold text-xl">cases</a>
+            </div>
+            <div class="py-2 hover:border-b hover:border-ed">
+                <a href="#" class="font-semibold text-xl">action</a>
+            </div>
+
+            <div class="py-2 hover:border-b hover:border-ed">
+                <a href="#" class="font-semibold text-xl">alerta</a>
+            </div>
+            <input type="text" class="bg-auriga-biru border-b border-ed py-2 text-ed text-sm focus:outline-none" placeholder="search ed">
+        </div>
+    </div>
+</section>
+
+<div class="w-full sm:h-hero h-60 relative">
+    <img src="assets/hero-ED.png" alt="" class="h-full w-full object-cover relative">
+    <div class="absolute right-0 bottom-0 z-10">
+        <img src="assets/elemen.png" alt="" class="lg:h-80 h-16">
+    </div>
+</div>
+
+<!-- latest news -->
+<div class="md:py-10 py-4 max-w-6xl mx-auto px-4">
+    <div class="grid md:grid-cols-3 grid-cols-1 gap-10 md:mt-12 mt-6">
+       <!-- card -->
+       <div class="flex flex-col  text-ed">
+            <img
+            class="md:w-80 w-full h-52 object-cover"
+            src="https://environmentaldefender.id/image/artikel/1621873444_60abd3241bd42.jpeg"
+            alt="">
+            <div class="flex space-x-4 mt-3 items-center text-gray-500">
+                <h1 class="font-semibold md:text-xl text-md">alerta</h1>
+            </div>
+            <h1 class="md:mt-6 mt-3 md:text-3xl text-xl font-bold ">Judul artikel maksimal 70
+                karakter termasuk spasi
+                di sini jadi 3 baris
+            </h1>
+            <div class="md:mt-6 mt-3 ">
+                <a class="font-bold">NOVEMBER 2022</a><span> | </span><a>Xerundistius ipsum nulpa
+                    destibus de omnihit volupist, si dipitempore,
+                    quiaerum quibus. Harciatur aborit fugiatusdae
+                    num reptatur</a>
+            </div>
+       </div>
+       <!-- card -->
+        <div class="flex flex-col  text-ed">
+            <img
+            class="md:w-80 w-full h-52 object-cover"
+            src="https://environmentaldefender.id/image/artikel/1614051166_6034775e5b4e2.jpeg"
+            alt="">
+            <div class="flex space-x-4 mt-3 items-center text-gray-500">
+                <h1 class="font-semibold md:text-xl text-md">cases</h1>
+            </div>
+            <h1 class="md:mt-6 mt-3 md:text-3xl text-xl font-bold ">Judul artikel maksimal 70
+                karakter termasuk spasi
+                di sini jadi 3 baris
+            </h1>
+            <div class="md:mt-6 mt-3 ">
+                <a class="font-bold">NOVEMBER 2022</a><span> | </span><a>Xerundistius ipsum nulpa
+                    destibus de omnihit volupist, si dipitempore,
+                    quiaerum quibus. Harciatur aborit fugiatusdae
+                    num reptatur</a>
+            </div>
+        </div>
+       <!-- card -->
+        <div class="flex flex-col  text-ed">
+            <img
+            class="md:w-80 w-full h-52 object-cover"
+            src="https://environmentaldefender.id/image/artikel/1613975016_60334de83eaee.jpeg"
+            alt="">
+            <div class="flex space-x-4 mt-3 items-center text-gray-500">
+                <h1 class="font-semibold md:text-xl text-md">action</h1>
+            </div>
+            <h1 class="md:mt-6 mt-3 md:text-3xl text-xl font-bold ">Judul artikel maksimal 70
+                karakter termasuk spasi
+                di sini jadi 3 baris
+            </h1>
+            <div class="md:mt-6 mt-3 ">
+                <a class="font-bold">NOVEMBER 2022</a><span> | </span><a>Xerundistius ipsum nulpa
+                    destibus de omnihit volupist, si dipitempore,
+                    quiaerum quibus. Harciatur aborit fugiatusdae
+                    num reptatur</a>
+            </div>
+        </div>
+
+        <!-- card -->
+        <div class="sm:flex hidden flex-col  text-ed">
+            <img
+            class="md:w-80 w-full h-52 object-cover"
+            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            alt="">
+            <div class="flex space-x-4 mt-3 items-center text-gray-500">
+                <h1 class="font-semibold md:text-xl text-md">alerta</h1>
+            </div>
+            <h1 class="md:mt-6 mt-3 md:text-3xl text-xl font-bold ">Judul artikel maksimal 70
+                karakter termasuk spasi
+                di sini jadi 3 baris
+            </h1>
+            <div class="md:mt-6 mt-3 ">
+                <a class="font-bold">NOVEMBER 2022</a><span> | </span><a>Xerundistius ipsum nulpa
+                    destibus de omnihit volupist, si dipitempore,
+                    quiaerum quibus. Harciatur aborit fugiatusdae
+                    num reptatur</a>
+            </div>
+        </div>
+
+        <!-- card -->
+        <div class="sm:flex hidden flex-col  text-ed">
+            <img
+            class="md:w-80 w-full h-52 object-cover"
+            src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+            alt="">
+            <div class="flex space-x-4 mt-3 items-center text-gray-500">
+                <h1 class="font-semibold md:text-xl text-md">alerta</h1>
+            </div>
+            <h1 class="md:mt-6 mt-3 md:text-3xl text-xl font-bold ">Judul artikel maksimal 70
+                karakter termasuk spasi
+                di sini jadi 3 baris
+            </h1>
+            <div class="md:mt-6 mt-3 ">
+                <a class="font-bold">NOVEMBER 2022</a><span> | </span><a>Xerundistius ipsum nulpa
+                    destibus de omnihit volupist, si dipitempore,
+                    quiaerum quibus. Harciatur aborit fugiatusdae
+                    num reptatur</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="w-full sm:py-10 py-4 bg-ed">
+    <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-white sm:text-4xl text-xl font-semibold sm:w-4/12 w-full">ENVIRONMENTAL DEFENDER CASES</h1>
+        <div>
+
+        </div>
+        <h2 class="mt-6 sm:text-3xl text-base font-semibold text-judulchart w-full text-center ">Sebaran ancaman terhadap pembela lingkungan 2014 - Desember 2022
+        </h2>
+        <iframe src="https://database.environmentaldefender.id/embed/map" scrolling="no" frameborder="0" class="overflow-y-none w-full h-106 mt-4 rounded"></iframe>
+        <div class="max-w-4xl mx-auto px-4 py-6 text-judulchart">
+            <p>Ancaman terhadap pembela lingkungan tersebar di seluruh pulau besar Indonesia sejak 2014. Dari total 102 kasus yang terdokumentasi, terbanyak terjadi Jawa (29 kasus), disusul Sumatera (23 kasus), Sulawesi (18 kasus), Kalimantan (16 kasus), Bali dan Nusa Tenggara (12 kasus), Kepulauan Maluku (2 kasus), dan Tanah Papua (2 kasus).</p>
+            <p class="mt-4">
+                Ancaman terhadap pembela lingkungan terjadi di 26 (dari 34) provinsi di Indonesia. Kasus terbanyak terjadi di Sumatera Utara dan Jawa Tengah dan Sumatera Utara masing-masing 9 kasus; disusul Jawa Timur 8 kasus; kemudian Nusa Tenggara Timur dan Sulawesi Utara masing-masing 7 kasus; DKI Jakarta, Jawa Barat, Kalimantan Tengah masing-masing 6 kasus; Kalimantan Timur dan Sulawesi Tenggara masing-masing 5 kasus; Bengkulu dan Nusa Tenggara Barat masing-masing 4 kasus; Kepulauan Bangka Belitung, Jambi, Kalimantan Barat, Sulawesi Selatan, Sulawesi Tengah masing-masing 3 kasus; Sumatera Barat dan Kalimantan Selatan masing-masing 2 kasus; Aceh, Sumatera Selatan, Bali, Maluku, Maluku Utara, Papua Barat, dan Papua masing-masing 1 kasus.
+            </p>
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 mt-12">
+        <h2 class="mt-6 sm:text-3xl text-base font-semibold text-judulchart  w-full text-center">Jumlah ancaman terhadap pembela lingkungan 2014 -
+            Desember
+        </h2>
+        <iframe src="https://database.environmentaldefender.id/embed/jumlahkasus" scrolling="no" frameborder="0" class="overflow-y-none w-full h-106 mt-4 rounded"></iframe>
+        <div class="max-w-4xl mx-auto px-4 py-6 text-judulchart">
+            <p>Tahun 2014 dan 2015 ancaman terhadap pembela lingkungan hidup sebesar 5 kasus, lalu menurun pada tahun 2016 hanya tercatat 2 kasus, namun pada tahun 2017 meningkat drastis menjadi 14 kasus. Tahun 2018 kembali menurun hanya 4 kasus, dan meningkat lagi pada tahun 2019 sebanyak 8 kasus. selanjutnya tahun 2020 tercatat 13 kasus ancaman terhadap pembela lingkungan. Pada tahun 2021 terjadi peningkatan tajam kasus sebanyak 24 kasus. Pada 2022, hingga 7 November, jumlah ancaman terhadap pembela lingkungan telah melampaui angka sepanjang tahun sebelumnya, yakni tercatat 26 kasus.
+
+            </p>
+
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 mt-12">
+        <h2 class="mt-6 sm:text-3xl text-base font-semibold text-judulchart  w-full text-center">Ancaman terhadap pembela lingkungan 2014 -
+            Desember
+        </h2>
+        <div class="max-w-7xl flex justify-end">
+            <iframe src="https://database.environmentaldefender.id/embed/sektor" scrolling="no" frameborder="0" class="overflow-y-none sm:w-11/12 w-full h-106 mt-4 rounded"></iframe>
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 py-6 text-judulchart">
+            <p>Hampir separuh (45 dari 102) kasus ancaman terhadap pembela lingkungan terjadi pada sektor tambang & energi. Pengembangan perkebunan menjadi penyumbang kedua terbesar ancaman terhadap pembela lingkungan (27 kasus), menyusul pencemaran lingkungan dan kehutanan yang masing-masing menyumbang 13 kasus, serta kelautan 4 kasus.
+            </p>
+
+        </div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 mt-12">
+        <h2 class="mt-6 sm:text-3xl text-base font-semibold text-judulchart  w-full text-center">Jenis ancaman terhadap pembela lingkungan 2014 -
+            Desember
+        </h2>
+        <iframe src="https://database.environmentaldefender.id/embed/bentukancaman" scrolling="no" frameborder="0" class="overflow-y-none w-full h-106 mt-4 rounded"></iframe>
+        <div class="max-w-4xl mx-auto px-4 py-6 text-judulchart">
+            <p>65% (66 dari 102 kasus) ancaman terhadap pembela lingkungan berupa kriminalisasi; disusul kekerasan fisik 16 kasus; kemudian pembunuhan 8 kasus; intimidasi 7 kasus; imigrasi/deportasi 3 kasus; dan perusakan properti 1 kasus.
+            </p>
+            <p class="mt-4">Pada bulan Oktober 2021, terjadi satu kasus pembunuhan terhadap environmental defender yang berprofesi sebagai advokat yaitu Jurkani. Ia menerima serangan brutal berupa pembacokan oleh segerombolan orang di konsesi IUP PT Anzawara, Desa Bunati, kec. Angsana Kalsesl. Sebelum pembunuhan terjadi Jurkani sedang melakukan advokasi kasus tambang ilegal di tanah Bumbu, Kalimantan Selatan.
+            </p>
+            <p class="mt-4">
+                Ancaman terhadap pembela lingkungan juga menimpa indonesianis warga asing. Warga Perancis peneliti ekologi David Gaveau yang beristri warga Indonesia dideportasi pada awal 2020 setelah menulis hasil penelitiannya mengenai kebakaran hutan dan lahan, sedang jurnalis Mongabay warga Amerika Serikat Phil Jacobson yang banyak menulis korupsi deforestasi ditahan di Palangkaraya, Kalimantan Tengah, pada Januari 2020. Terbaru, pada September 2022, peneliti orangutan Erik Meijaard, dkk praktis dilarang beraktivitas meneliti di dalam kawasan hutan Indonesia.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<footer class="bg-black">
+    <div class="max-w-5xl text-center flex justify-center mx-auto">
+        <p class="text-judulchart sm:text-2xl text-base px-4 py-6">Situs ini didedikasikan untuk peningkatan keselamatan pembela lingkungan. Memuat
+            informasi terkait, membantu pembelaan terhadap environmental defender, hingga
+            membangun database.</p>
+    </div>
+</footer>
+</body>
+</html>
